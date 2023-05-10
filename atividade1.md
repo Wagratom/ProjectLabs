@@ -18,8 +18,9 @@
 	```
 <br> `passo 2`
 
-* Crie um plugin para configurar o arquivo data que estra localizado na pasta docs do seu app.
-O pluguin deverar deixa o file com a seguind estrutura
+* Crie um plugin para configurar o arquivo data que esta localizado na pasta docs do seu app.
+O pluguin deverar deixa o file com a seguind estrutura, os dados são recebidos na hora pelo plugin.
+Poder ser por default ou por input do usuario.
 
 	```
 	|"""""""""""""""""""""""""""""""""""""|
