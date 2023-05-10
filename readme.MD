@@ -42,7 +42,7 @@ A atividade 1 e 2 envolvem a criação de um ambiente com diretorios especificos
 Pontos Fortes: Pode ser usado para automatizar a criação de estruturas de ambientes e a configuração de arquivos pré existentes.<br>
 Foco: `Hooks do tipo edit` -> `search` `insert` `condicion` `snippet` `when` e etc.
 
-## Estrutura cub3d pronta? Como assim não tem? Então bora criar!
+## Estrutura gráfica pronta? Como assim não tem? Então bora criar!
 
 Vai me dizer que você nunca estressou tentando baixar e configurar a minilibx?
 Ou que nunca teve que ficar configurando o Makefile para compilar o cub3d e joga os objetos em uma pasta especifica?
