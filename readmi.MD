@@ -34,4 +34,5 @@ O STK CLI é a ferramenta de interface de linha de comando da StackSpot. É o pr
 
 # Atividades
 Criamos algumas atividades para você praticar o uso do STK CLI. Você pode executar as atividades em qualquer ordem, mas recomendamos que você siga a ordem sugerida.
-
+Atividade 1 a 3 Envolvem a criação de um ambiente com diretorios especificos e a criação de um plugin para configurar um arquivo de texto e captura de informações do usuario.
+Pontos fortes: `insert` `snippet` `search` `condicion` `when` e etc.
