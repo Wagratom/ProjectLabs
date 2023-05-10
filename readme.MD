@@ -33,13 +33,19 @@ O STK CLI é a ferramenta de interface de linha de comando da StackSpot. É o pr
 [Basic commands](https://gist.github.com/wwwwelton/ec2d8b41333d105752859200a541be7b)
 
 # Atividades
-Criamos algumas atividades para você praticar o uso do STK CLI. Você pode executar as atividades em qualquer ordem, mas recomendamos que você siga a ordem sugerida.
 
-## Atividade 1 a 2
+Aqui esta algumas atividades para você praticar o uso do STK CLI. Você pode executar as atividades em qualquer ordem, mas recomendamos que você siga a ordem sugerida.</br>
 
-Envolvem a criação de um ambiente com diretorios especificos e a criação de um plugin para configurar um arquivo de texto e captura de informações do usuario.<br>
-Pontos Fortes: `uso do edit` -> `insert` `snippet` `search` `condicion` `when` e etc.
+## Vamos Configurar alguns arquivos? lest bora!
 
-## Atividade 3 a 4
+A atividade 1 e 2 envolvem a criação de um ambiente com diretorios especificos e a criação de um plugin para configurar um arquivo de texto com informações capturadas do usuario.<br>
+Pontos Fortes: Pode ser usado para automatizar a criação de estruturas de ambientes e a configuração de arquivos pré existentes.<br>
+Foco: `Hooks do tipo edit` -> `search` `insert` `condicion` `snippet` `when` e etc.
 
-Continuação das atividades 1 e 2, porem iremos focar mais em scripts e como eles podem ser usados para automatizar tarefas.<br>
+## Estrutura cub3d pronta? Como assim não tem? Então bora criar!
+
+Vai me dizer que você nunca estressou tentando baixar e configurar a minilibx?
+Ou que nunca teve que ficar configurando o Makefile para compilar o cub3d e joga os objetos em uma pasta especifica?
+Então essa atividade é para você!<br>
+
+Pontos fortes: Pode ser usado para automatizar a criação de estruturas de ambientes e a configuração de arquivos pré-existentes. Peraí, você já fez isso, né? Se não, volte umas atividades. Se sim, vamos complementar configurando o ambiente de forma geral, com dependências, bibliotecas e configurações de arquivos. Lest bora de atividade 3 e 4!<br>
