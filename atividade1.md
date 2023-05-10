@@ -19,9 +19,7 @@
 <br> `passo 2`
 
 * Crie um plugin para configurar o arquivo data que esta localizado na pasta docs do seu app.
-O pluguin deverar deixa o file com a seguind estrutura, os dados são recebidos na hora pelo plugin.
-Poder ser por default ou por input do usuario.
-
+O pluguin deverar deixa o data.txt com a seguinte estrutura.
 	```
 	|"""""""""""""""""""""""""""""""""""""|
 	|	42SP projects: Tools Stack Sport  |
@@ -33,8 +31,11 @@ Poder ser por default ou por input do usuario.
 	"""""""""""""""""""""""""""""""""""""""
 	```
 
+* Os dados são recebidos na hora pelo plugin. Poder ser por default ou por input do usuario.
+* O usuario pode decidir se quer adicionar o prefix "42SP projects: " antes do nome do projeto.
 * o pluguin sera aplicado dentro do app que voce criou. Caso você acabe aplicando o pluguin
-novamente ele nao pode dublicar as informacoes que ja estao no arquivo data.txt
+mais de uma vez ele nao pode dublicar as informacoes que ja estao no arquivo data.txt
+(not relink, estilo 42 XD)
 
 <br> `passo 3`
 

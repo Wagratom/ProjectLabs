@@ -4,9 +4,10 @@
 
 `passo 1`
 
-* Ainda usando a stack criada na atividade 1, vamos criar um plugin que ira criar um arquivo de data2
-que servirar como um snippet de codigo no arquivo data.txt. O conteudo pode ser da sua escolha.
+* Ainda usando a stack criada da atividade 1, vamos criar um plugin que ira usar um snippet prontO.
+O snippet sera adicionado no final do arquivo data.txt. O conteudo pode ser da sua escolha.
 
+meu conteudo
 
 	```
 	⢕⠝⢢⣤⣾⣿⣿⣿⣿⣿⣿⣿⠗⠿⠛⠛⠛⠛⠋⠁⠈⠉⠉⠉⠉⠹⣿⢿⡙⢿⣿⣿⣧⠹⣿⣿⣿⣿⡿⠿⠟⠛⠋⠀⡠⠈⠀⢨⠔⢁
@@ -35,3 +36,13 @@ que servirar como um snippet de codigo no arquivo data.txt. O conteudo pode ser 
 	⣿⣋⣿⣿⣿⣿⡿⣦⣶⠀⠙⢿⠿⠿⣷⣄⡀⠀⠈⠉⠛⠛⠛⠶⠶⠶⠶⠶⠶⠶⠿⠛⣛⣀⣴⠿⡿⠧⠘⣿⢺⣷⠀⢻⣿⣧⡀⠀⠀⠀
 	⣼⠻⡝⣩⡟⡿⢣⡞⣿⣿⡄⠀⠀⠀⠉⠛⠛⠿⠶⢤⣤⣤⣀⣀⠀⠀⠀⠀⣀⣶⣾⣿⠛⠛⠁⠀⠃⠀⠺⠛⠧⠻⡆⠻⠿⠟⠿⠀⠀⠀
 	```
+
+<br> `passo 2`
+
+* o snippet não pode relinkar
+
+<br> `passo 3`
+
+* Otimizar o stackfile do exercicio 1 para chamar os 2 plugins (Estou inventando da minha cabeça gente, se não tiver como despista)
+
+*99% de certeza que tem como fazer isso*
