@@ -43,6 +43,4 @@ meu conteudo
 
 <br> `passo 3`
 
-* Otimizar o stackfile do exercicio 1 para chamar os 2 plugins (Estou inventando da minha cabeça gente, se não tiver como despista)
-
-*99% de certeza que tem como fazer isso*
+* Otimizar o stackfile do exercicio 1 para chamar os 2 plugins
