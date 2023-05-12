@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"{{headername}}": "c",
+		"cub3d.h": "c"
+	}
+}
