@@ -48,4 +48,4 @@ Vai me dizer que você nunca estressou tentando baixar e configurar a minilibx?
 Ou que nunca teve que ficar configurando o Makefile para compilar o cub3d e joga os objetos em uma pasta especifica?
 Então essa atividade é para você!<br>
 
-Pontos fortes: Pode ser usado para automatizar a criação de estruturas de ambientes e a configuração de arquivos pré-existentes. Peraí, você já fez isso, né? Se não, volte umas atividades. Se sim, vamos complementar configurando o ambiente de forma geral, com dependências, bibliotecas e configurações de arquivos. Lest bora de atividade 3 e 4!<br>
+Pontos fortes: Pode ser usado para automatizar a criação de estruturas de ambientes e a configuração de arquivos pré-existentes. Peraí, você já fez isso, né? Se não, volte umas atividades. Se sim, vamos complementar configurando o ambiente de forma geral, com dependências, bibliotecas e configurações de arquivos. Lest bora de atividade 3!<br>
