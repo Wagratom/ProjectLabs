@@ -9,7 +9,7 @@ Em outras palavras, o Docker permite que você empacote um aplicativo e suas dep
 
 O Docker possui um arquivo chamado dockerfile, o qual recebe várias instruções que o Docker usará para criar seu contêiner. Imagine o projeto Born2beroot da 42, e suponha que você precisasse configurá-lo usando apenas um arquivo de texto, o dockerfile é esse arquivo de texto. Com esse arquivo de texto, você criará uma imagem, que é como se fosse uma ISO que você usa para instalar o Debian no projeto, e com essa imagem, você criará um contêiner, que é como se fosse uma máquina virtual. Ele já estará configurado com o que o PDF pede devido às instruções que você deixou no dockerfile. O Wordpress estará rodando e tudo mais. Um sonho, né? Esse é o poder do Docker.
 
-![Docker imagem explicativa](docker.png).
+![Docker imagem explicativa](./.github/images/docker.png).
 ### Entre os principais benefícios do Docker estão:
 
 * Portabilidade: os contêineres Docker podem ser executados em qualquer sistema que suporte o Docker,
