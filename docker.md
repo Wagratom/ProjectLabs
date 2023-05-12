@@ -26,6 +26,5 @@ Consistência: o Docker oferece uma maneira consistente de empacotar e implantar
 * O docker tem um docker hub, que é um repositório de imagens, onde você pode baixar imagens prontas para usar, como o Debian, Wordpress, MySQL, etc. Você também pode criar suas próprias imagens e enviá-las para o docker hub, para que outras pessoas possam usá-las.
 
 ### Basico docker
-```
+
 https://www.hostinger.com.br/tutoriais/container-docker?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=9101272&gclid=CjwKCAjwx_eiBhBGEiwA15gLN3TXUvfCg5RucW3LOKOTkPBag87NN10Lb_76EEo95jnc3iXjR_d5txoCN1cQAvD_BwE
-```
