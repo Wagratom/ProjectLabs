@@ -13,30 +13,29 @@ A AWS CLI fornece acesso direto às APIs públicas dos serviços da AWS. Você p
 
 ### AWS SAM
 
-O  AWS SAM (Serverless Application Model) é um modelo open source que permite que você desenvolva, testa e implante aplicativos serverless na AWS. O AWS SAM é baseado no AWS CloudFormation.
+O  AWS SAM (Serverless Application Model) é um modelo open source que permite que você desenvolva, testa e implante aplicativos serverless na AWS. O AWS SAM é baseado no AWS [CloudFormation](#aws_cloudformation).
 
-Com o AWS SAM, você pode definir suas funções serverless, APIs REST, eventos e recursos de infraestrutura usando um único arquivo de template YAML ou JSON. O modelo SAM também inclui convenções de nomenclatura e estrutura de diretórios que ajudam a organizar e gerenciar seus recursos de aplicativo serverless de maneira mais eficiente.
+Com o AWS SAM, você pode definir suas funções serverless, APIs REST, eventos e recursos de infraestrutura usando um único arquivo de template YAML ou JSON. O modelo SAM também inclui convenções de nomenclatura e estrutura de diretórios que ajudam a organizar e gerenciar seus recursos de aplicativo [serverless](#aplicativos_serverless) de maneira mais eficiente.
 
 Ao usar o AWS SAM, você pode implantar rapidamente seus aplicativos serverless na AWS, sem se preocupar com a infraestrutura subjacente. O AWS SAM também inclui um conjunto de ferramentas de linha de comando para ajudar a criar, testar e depurar seus aplicativos serverless localmente.
 
 O AWS SAM é compatível com várias linguagens de programação, como Node.js, Python, Java, Ruby e Go, entre outras.
 
-### AWS CloudFormation
+# Dados complementares
+
+### AWS_CloudFormation
 
 O AWS CloudFormation é um serviço de infraestrutura como código que permite criar, gerenciar e provisionar recursos de infraestrutura na AWS de maneira automatizada e consistente. Com o CloudFormation, você pode definir sua infraestrutura como código em um arquivo JSON ou YAML e usar esse modelo para criar e provisionar recursos na AWS de maneira repetível e escalável.
 
 Em certo sentido, o AWS CloudFormation pode ser comparado com um Dockerfile, pois ambos são ferramentas de infraestrutura como código que permitem definir e gerenciar recursos de infraestrutura de maneira automatizada e repetível.
 
-### aplicativos serverless
+### aplicativos_serverless
 
 Aplicativos serverless são aplicativos que são executados em plataformas de computação sem [servidor](#adicionais1), como o AWS Lambda, o Azure Functions e o Google Cloud Functions. Essas plataformas permitem que os desenvolvedores escrevam código de aplicativo sem se preocupar com a infraestrutura subjacente, como servidores, redes e balanceadores de carga.
 
 Ao contrário dos aplicativos tradicionais que são implantados em servidores, os aplicativos serverless são executados em um ambiente altamente escalável e elástico. Isso significa que a plataforma de computação sem servidor provisiona automaticamente os recursos necessários para executar o código, e escala automaticamente para lidar com picos de tráfego. Quando não há tráfego, os recursos são liberados e o aplicativo não consome recursos desnecessários.
 
 Os aplicativos serverless têm muitas vantagens em relação aos aplicativos tradicionais, como redução de custos, facilidade de escalabilidade, tempo de desenvolvimento mais rápido e menor sobrecarga operacional. No entanto, eles também têm algumas desvantagens, como restrições de tempo de execução e limitações de recursos, o que pode limitar a complexidade dos aplicativos.
-
-
-# Dados complementares
 
 ### adicionais1
 
