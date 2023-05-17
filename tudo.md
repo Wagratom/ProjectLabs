@@ -70,21 +70,19 @@ Usaremos o alias criado acima `awsls`, qualquer um dos 2 comandos cria um bucket
 ```
 awsls s3 mb s3://hands-on-cloud-localstack-bucket ✅
 awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket ✅
-
 ```
+
 Para ver a lista do buckets criados, usamos o comando
 ```
 awsls s3 ls ✅
 ```
 Funcionou? Se não, você pode enviar uma mensagem para o meu [assistente](https://chat.openai.com/) pessoal e ele te responderá ✅
 
-### Terminamos o passo 2, foi so configurações mesmo, mas foi bem trabalhoso: 😥
-
 # Parte 3
 
 ### Vou focar apenas nas partes que considero mais importantes
 
-O código está comentado, mas vou explicar as partes que considero mais importantes aqui: <br>
+O codigo completo esta no diretorio `crud-python`, mas vou explicar as partes que considero mais importantes aqui: <br>
 Escrevendo aqui, percebi que é bem simples, basta focar nas partes importantes e ignorar o resto. <br>
 
 Vamos importar as bibliotecas necessárias para o código funcionar: <br>
@@ -104,34 +102,63 @@ A biblioteca `os` é utilizada para realizar operações relacionadas ao sistema
 
 Note que nos exemplos a seguir, utilizaremos principalmente o `boto3`, as demais bibliotecas são utilizadas principalmente para tratamento de erros e registros de log no código em si. <br>
 
-### Criando um bucket no S3 usando boto3
+### Criando um cliente do S3 usando boto3
 
-Utilizaremos a função boto3.client para criar um cliente do S3. <br>
-Em seguida, chamamos a função s3_client.create_bucket para criar um bucket no S3. <br>
-
+Ultizaremos a função `boto3.client` para criar um cliente do S3. <br>
 ```
 AWS_REGION = 'us-east-1' # região padrão
 AWS_PROFILE = 'localstack' # perfil padrão
 ENDPOINT_URL = os.environ.get('LOCALSTACK_ENDPOINT_URL') # URL do localstack
 
 s3_client = boto3.client("s3", region_name=AWS_REGION, endpoint_url=ENDPOINT_URL)
+
+```
+"s3" é o nome do serviço que queremos criar um cliente. Tem diversos serviçoes disponiveis <br>
+region_name é a região que queremos criar o cliente. <br>
+endpoint_url é a URL do localstack. <br>
+
+Usaremos esse client para seguir os proximos passos. lembre-se do seu nome `s3_client`<br>
+
+### Criando um bucket no S3 usando boto3
+
+Chamamos a função `create_bucket` para criar um bucket no S3. <br>
+
+```
 response = s3_client.create_bucket(Bucket=BUCKET_NAME)
 ```
-É só isso mesmo? 😵 Realmente, aprende-se muito ensinando. <br>
+Lembrando que o `BUCKET_NAME` é uma variavel que contem o nome do bucket que queremos criar. <br>
+
+Via linha de commando
+```
+awsls s3 mb s3://hands-on-cloud-localstack-bucket ✅
+awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket ✅
+```
 
 ### Vamos lista os buckets criados
 
-Observem que utilizamos o `boto3.client` para criar um cliente S3 anteriormente, e agora estamos usando o `boto3.resource` para criar um recurso do S3. Recomendo verificar a diferença entre eles no final do [arquivo](#client_vs_resource). Nesse cenário, o resource é melhor. <br>
+Observem que utilizamos o boto3.client para criar um cliente S3 anteriormente, e agora estamos usando o boto3.resource para criar um recurso do S3. Recomendo verificar a diferença entre eles no final do [arquivo](#client_vs_resource). Nesse cenário, o resource é melhor. <br>
 
-Iremos usa o método `buckets.all()` do resource que retorna um objeto iterador que contém todos os nomes de bucket do S3.
+Vamos usar o método `buckets.all()` do resource, que retorna um objeto iterador contendo todos os nomes de buckets do S3.
 ```
-s3_resource = `boto3.resource`("s3", region_name=AWS_REGION, endpoint_url=ENDPOINT_URL) # cria um recurso S3
+s3_resource = boto3.resource("s3", region_name=AWS_REGION, endpoint_url=ENDPOINT_URL)
+
 s3 = s3_resource.buckets.all()
 for bucket in s3:
 	logger.info(bucket.name)
 ```
+Observem que ele recebe os mesmos parâmetros da função `boto3.client`. <br>
 
-### Vamos fazer upload um um arquivo no bucket
+Relembrando: <br>
+"s3" é o nome do serviço para o qual queremos criar um cliente. Existem vários serviços disponíveis. <br>
+region_name é a região para a qual queremos criar o cliente. <br>
+endpoint_url é a URL do LocalStack. <br>
+
+Via linha de commando
+```
+awsls s3 ls
+```
+
+### Vamos fazer upload um arquivo no bucket
 
 Vamos usar a função `upload_file` do cliente S3 para fazer upload de um arquivo no bucket. <br>
 ```
@@ -143,9 +170,18 @@ Object_name é o nome do objeto que queremos fazer upload. <br>
 
 Supondo: se você carregou o arquivo `Luffy` no S3 com o nome de objeto `Rei_dos_Piratas`, ao buscar o arquivo no S3, você precisará especificar o nome de objeto como `Rei_dos_Piratas`.
 
-Para verificar se o arquivo foi carregado com sucesso
+Via linha de command
 ```
-awsls s3 ls s3://hands-on-cloud-localstack-bucket ✅
+aws s3 cp caminho_do_arquivo s3://nome_do_bucket
+
+aws s3 cp meu_arquivo.txt s3://meu-bucket/ # exemplo
+
+aws s3 cp meu_arquivo.txt s3://meu-bucket/pasta1/ #rename
+```
+
+Para verificar se o arquivo foi upado com sucesso
+```
+awsls s3 ls s3://<nome do bucket>
 ```
 
 ### Vamos fazer download do arquivo
@@ -158,6 +194,14 @@ Bucket_name é o nome do bucket que queremos fazer download. <br>
 Object_name é o nome do objeto que queremos fazer download. <br>
 save_path é o caminho onde o arquivo será salvo. <br>
 
+Via linha de command
+```
+aws s3 cp s3://<nome_do_bucket>/<caminho_no_bucket> <caminho_local>
+
+aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/ # exemplo
+
+aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/function_x.txt # renomeando
+```
 
 
 
