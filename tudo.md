@@ -165,15 +165,13 @@ Filename é o nome do arquivo que queremos fazer upload. <br>
 Bucket_name é o nome do bucket que queremos fazer upload. <br>
 Object_name é o nome do objeto que queremos fazer upload. <br>
 
-Supondo: se você carregou o arquivo `Luffy` no S3 com o nome de objeto `Rei_dos_Piratas`, ao buscar o arquivo no S3, você precisará especificar o nome de objeto como `Rei_dos_Piratas`.
+Supondo: se você carregou o arquivo `Luffy` no S3 com o nome de Object_name `Rei_dos_Piratas`, ao buscar o arquivo no S3, você precisará especificar o nome do Object_name como `Rei_dos_Piratas`.
 
 Via linha de command
 ```
-aws s3 cp caminho_do_arquivo s3://nome_do_bucket
+aws s3 cp Luffy.txt s3://meu-bucket/ # exemplo
 
-aws s3 cp meu_arquivo.txt s3://meu-bucket/ # exemplo
-
-aws s3 cp meu_arquivo.txt s3://meu-bucket/pasta1/ #rename
+aws s3 cp Luffy.txt s3://meu-bucket/Rei_dos_Piratas.txt #rename
 ```
 
 Para verificar se o arquivo foi upado com sucesso
