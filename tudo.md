@@ -176,7 +176,7 @@ aws s3 cp Luffy.txt s3://meu-bucket/Rei_dos_Piratas.txt #rename
 
 Para verificar se o arquivo foi upado com sucesso
 ```
-awsls s3 ls s3://<nome do bucket>
+awsls s3 ls s3://meu-bucket
 ```
 
 #### Vamos fazer download do arquivo
@@ -191,11 +191,9 @@ save_path é o caminho onde o arquivo será salvo. <br>
 
 Via linha de command
 ```
-aws s3 cp s3://<nome_do_bucket>/<caminho_no_bucket> <caminho_local>
+aws s3 cp s3://meu-bucket/Luffy.txt caminho_local/ # exemplo
 
-aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/ # exemplo
-
-aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/function_x.txt # renomeando
+aws s3 cp s3://meu-bucket/Luffy.txt caminho_local/Rei_dos_Piratas.txt # renomeando
 ```
 
 #### Vamos deletar o bucket
@@ -211,14 +209,14 @@ response = s3_client.delete_bucket(Bucket=bucket_name)
 ```
 Via linha de command
 ```
-awsls s3 rm s3://meu-bucket/teste.txt # deletando o arquivo
+awsls s3 rm s3://meu-bucket/luffy.txt # deletando o arquivo
 
-aws s3 rb s3://meu-bucket # deletando o bucket, certifique-se que o bucket esteja vazio
+awsls s3 rb s3://meu-bucket # deletando o bucket, certifique-se que o bucket esteja vazio
 ```
 Se o bucket não estiver vazio, você receberá um erro.<br>
 Você pode usar o comando aws s3 rm em combinação com a opção --recursive para excluir todos os objetos dentro do bucket de forma recursiva:
 ```
-aws s3 rm s3://<bucket_name> --recursive
+awsls s3 rm s3://meu-bucket --recursive
 ```
 
 ## passo 3 - Criando uma função lambda
