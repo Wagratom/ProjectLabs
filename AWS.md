@@ -21,6 +21,27 @@ Ao usar o AWS SAM, você pode implantar rapidamente seus aplicativos serverless 
 
 O AWS SAM é compatível com várias linguagens de programação, como Node.js, Python, Java, Ruby e Go, entre outras.
 
+### SQS
+
+O Amazon Simple Queue Service (SQS) é um serviço de filas gerenciadas oferecido pela Amazon Web Services (AWS). Ele fornece uma maneira confiável de transmitir mensagens entre diferentes componentes de um sistema distribuído.
+
+O SQS permite que você crie filas para armazenar mensagens. Uma fila é um repositório temporário para as mensagens que estão sendo enviadas entre os componentes do seu sistema.
+
+### Aqui está um exemplo real para ilustrar o uso de mensagens no Amazon SQS:
+
+Imagine um sistema de comércio eletrônico em que várias etapas precisam ser executadas para processar um pedido, como verificação de estoque, faturamento e envio. Nesse cenário, o Amazon SQS pode ser usado para transmitir informações entre essas etapas.
+
+* Produtor: Quando um cliente faz um pedido, um componente do sistema (o produtor) cria uma mensagem contendo os detalhes do pedido, como ID do pedido, itens, endereço de entrega, etc. Essa mensagem é enviada para uma fila específica, como a fila "pedidos".
+
+* Consumidores: Vários componentes (consumidores) estão interessados nas mensagens de pedidos e desempenham diferentes papéis no processamento. Por exemplo, um consumidor pode ser responsável pela verificação de estoque, enquanto outro pode ser responsável pelo faturamento e outro pelo envio.
+
+* Processamento assíncrono: Os consumidores buscam as mensagens da fila "pedidos" de forma assíncrona. Quando um consumidor recebe uma mensagem, ele processa o pedido conforme necessário. Por exemplo, o consumidor de verificação de estoque verifica a disponibilidade dos itens solicitados, atualiza o estoque e talvez envie uma notificação de status.
+
+* Confirmação da mensagem: Após processar a mensagem, o consumidor a confirma, informando ao SQS que a mensagem foi processada com sucesso. O SQS remove a mensagem da fila.
+
+Dessa forma, o sistema de comércio eletrônico pode escalar horizontalmente, adicionando mais consumidores para processar pedidos em paralelo. O uso de filas e mensagens permite que as etapas de processamento sejam desacopladas, tornando o sistema mais flexível, resiliente e escalável.
+
+
 # Dados complementares
 
 ### AWS_CloudFormation
