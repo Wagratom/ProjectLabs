@@ -1,6 +1,6 @@
-# Basico do basico do basico do... basico
+# Part1 -> Local Stack Basico Do Basico
 
-### Comecei instalando as seguintes ferramentas: 🔧⚙️
+#### Comecei instalando as seguintes ferramentas: 🔧⚙️
 ```
 instalar docker ✅
 instalar localstack ✅
@@ -10,8 +10,8 @@ instalar terraform ✅
 instalar samlocal ✅
 ```
 
-### iniciei um simples hello world 🌎
-para testar a ferramenta, fizemos um simples [tutorial](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) de hello world
+#### iniciei um simples hello world 🌎
+para testar a ferramenta, fizemos um simples [tutorial](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) de hello world.
 
 ```
 samlocal init -> iniciar um projeto ✅
@@ -19,15 +19,17 @@ samlocal build -> buidar um projeto ✅
 samlocal deploy -> fazer um deploy ✅
 ```
 
-### Tive meu primeiro problema ❌
+#### Tive meu primeiro problema ❌
 
 Não estava aparecendo o hello world no navegador, então corrigimos substituindo<br>
 `.amazonaws.com/Prod/hello/` por `.localhost.localstack.cloud:4566/Prod/hello/` na url gerada pelo deploy.<br>
 agora sim esta local. ✅
 
-### Vamos para o proximo passo, pareceu pouco esse inicio, mas foi bem trabalhoso: 😥
+#### Vamos para o proximo passo, pareceu pouco esse inicio, mas foi bem trabalhoso: 😥
 
-# Parte 2
+# Part 2 -> CRUD PYTHON
+
+## Passo 1
 
 ### Vamos tentar criar o CRUD em python já que o basico esta funcionando
 
@@ -40,9 +42,7 @@ Ele configura tudo em um ambiente Python virtual. Irei instalar o boto3 globalme
 pip install --upgrade pip boto3 ✅
 ```
 
-#### Pulei alguns passos, mas acho que não tem problema
-
-Então, vamos ver o meu passo a passo: <br>
+#### Agora vamos configurar algumas coisas
 
 Primeiramente, salvei o endpoint do LocalStack em uma variável usando o comando <br>
 ```
@@ -56,7 +56,6 @@ Também configurei o aws, so por garantia usei o mesmos dados do localstack
 ```
 aws configure ✅
 ```
-
 Vamos usar o`aws --endpoint-url=$LOCALSTACK_ENDPOINT_URL` já que é necessário apontar as chamadas de API da AWS CLI para as implantações locais do LocalStack em vez da infraestrutura da Nuvem AWS. <br>
 Para nao ficar usando esse "mostro", vamos criar um alias
 ```
@@ -64,23 +63,22 @@ alias awsls="aws --endpoint-url=$LOCALSTACK_ENDPOINT_URL" ✅
 ```
 agora podemos chama-los apenas usando `awsls`<br>
 
-### Vamos testar? Vamos criar um bucket do S3 usando a AWS CLI no LocalStack
-Usaremos o alias criado acima `awsls`, qualquer um dos 2 comandos cria um bucket no S3. So que um usa o mb e o outro o create-bucket
-
+#### Vamos testar?
+Usaremos o alias criado acima `awsls`.<br>
+Criaremos um bucket com os commandos abaixo, qualquer um dos 2 comandos cria um bucket no S3.
 ```
-awsls s3 mb s3://hands-on-cloud-localstack-bucket ✅
-awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket ✅
+awsls s3 mb s3://<nome_do_bucket> ✅
+awsls s3api create-bucket --bucket <nome_do_bucket> ✅
 ```
-
 Para ver a lista do buckets criados, usamos o comando
 ```
 awsls s3 ls ✅
 ```
 Funcionou? Se não, você pode enviar uma mensagem para o meu [assistente](https://chat.openai.com/) pessoal e ele te responderá ✅
 
-# Parte 3
+## Segundo passo, vamos criar um bucket do S3 usando o boto3 e AWS CLI no LocalStack
 
-### Vou focar apenas nas partes que considero mais importantes
+#### Vou focar apenas nas partes que considero mais importantes
 
 O codigo completo esta no diretorio `crud-python`, mas vou explicar as partes que considero mais importantes aqui: <br>
 Escrevendo aqui, percebi que é bem simples, basta focar nas partes importantes e ignorar o resto. <br>
@@ -102,7 +100,7 @@ A biblioteca `os` é utilizada para realizar operações relacionadas ao sistema
 
 Note que nos exemplos a seguir, utilizaremos principalmente o `boto3`, as demais bibliotecas são utilizadas principalmente para tratamento de erros e registros de log no código em si. <br>
 
-### Criando um cliente do S3 usando boto3
+#### Criando um cliente do S3 usando boto3
 
 Ultizaremos a função `boto3.client` para criar um cliente do S3. <br>
 ```
@@ -119,7 +117,7 @@ endpoint_url é a URL do localstack. <br>
 
 Usaremos esse client para seguir os proximos passos. lembre-se do seu nome `s3_client`<br>
 
-### Criando um bucket no S3 usando boto3
+#### Criando um bucket no S3 usando boto3
 
 Chamamos a função `create_bucket` para criar um bucket no S3. <br>
 
@@ -136,7 +134,7 @@ awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket
 ```
 A diferença deles são semelhantes as diferenças do client e resource, irei sita-los mais a baixa <br>
 
-### Vamos lista os buckets criados
+#### Vamos lista os buckets criados
 
 Observem que utilizamos o boto3.client para criar um cliente S3 anteriormente, e agora estamos usando o boto3.resource para criar um recurso do S3. Recomendo verificar a diferença entre eles no final do [arquivo](#client_vs_resource). Nesse cenário, o resource é melhor. <br>
 
@@ -160,7 +158,7 @@ Via linha de commando
 awsls s3 ls
 ```
 
-### Vamos fazer upload um arquivo no bucket
+#### Vamos fazer upload um arquivo no bucket
 
 Vamos usar a função `upload_file` do cliente S3 para fazer upload de um arquivo no bucket. <br>
 ```
@@ -186,7 +184,7 @@ Para verificar se o arquivo foi upado com sucesso
 awsls s3 ls s3://<nome do bucket>
 ```
 
-### Vamos fazer download do arquivo
+#### Vamos fazer download do arquivo
 
 Vamos usar a função `download_file` do cliente S3 para fazer download de um arquivo no bucket. <br>
 ```
@@ -205,7 +203,7 @@ aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/ # exemplo
 aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/function_x.txt # renomeando
 ```
 
-### Vamos deletar o bucket
+#### Vamos deletar o bucket
 
 Vamos usar a função mais de uma função, então vamos la
 ```
