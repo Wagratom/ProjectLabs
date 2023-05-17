@@ -225,19 +225,61 @@ aws s3 rm s3://<bucket_name> --recursive
 
 ## passo 3 - Criando uma função lambda
 
+#### pytest
+Ele usa o pytest para testar a função lambda, então vamos baixar <br>
+```
+pip install pytest
+```
+
+#### Criando a função lambda
+```
+import logging
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.INFO)
+
+def handler(event, context):
+	logging.info('Hands-on-cloud')
+	return {
+		"message": "Hello User!"
+	}
+```
+Event: <br>
+O parâmetro event contém informações sobre o evento que acionou a função. O formato e o conteúdo específicos do evento dependem do serviço em que a função está sendo executada.Por exemplo, em serviços como API Gateway ou S3, o evento pode conter detalhes sobre a solicitação HTTP ou a ação do objeto S3 que acionou a função.<br>
+
+context: <br>
+O parâmetro context contém informações de contexto e configurações relacionadas à execução da função. <br>
+Alguns dos atributos presentes no objeto context são:<br>
+* context.aws_request_id: O ID exclusivo da solicitação atual.
+* context.function_name: O nome da função lambda.
+* context.function_version: A versão da função lambda.
+* context.invoked_function_arn: O ARN (Amazon Resource Name) da função lambda.
+* context.memory_limit_in_mb: O limite de memória configurado para a função lambda.
+* context.log_group_name: O nome do grupo de logs do CloudWatch associado à função lambda.
+* context.log_stream_name: O nome do stream de logs do CloudWatch associado à função lambda.
+* context.get_remaining_time_in_millis(): Método para obter o tempo restante de execução antes de a função ser encerrada.
+
+### Criando uma main
+Uma função para zipar o arquivo da função lambda, para que possamos fazer o upload para o AWS Lambda. <br>
+```
+def	create_lambda_zip(function_name):
+	try:
+		with ZipFile(LAMBDA_ZIP, 'w') as zip:
+			zip.write(function_name + '.py')
+	except Exception as e:
+		logger.exception('Error while creating ZIP file.')
+		raise e
+```
+O parâmetro LAMBDA_ZIP é o caminho e nome do arquivo ZIP que será gerado. <br>
+O parâmetro function_name é o nome do arquivo que serar zipado. <br>
+
+Deixei o codigo todo comendado, para que você possa entender melhor o que cada função faz. <br>
+Não vou anotar tudo aqui porque ficaria muito grande, então vou olhem o main_utils.py <br>
+
+### Testando A Função Do AWS Lambda Interagindo Com O S3
 
 
-
-
-
-
-
-
-
-
-
-
-
+# ENDD
+# end
 
 
 
