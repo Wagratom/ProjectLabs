@@ -205,10 +205,28 @@ aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/ # exemplo
 aws s3 cp s3://meu-bucket/meu_arquivo.txt caminho_local/function_x.txt # renomeando
 ```
 
+### Vamos deletar o bucket
 
+Vamos usar a função mais de uma função, então vamos la
+```
+bucket = s3_resource.Bucket(bucket_name) # retorna o objeto bucket
+response = bucket.objects.all().delete() # deletando todos os objetos do bucket
+```
+Agora vamos deletar o bucket
+```
+response = s3_client.delete_bucket(Bucket=bucket_name)
+```
+Via linha de command
+```
+awsls s3 rm s3://meu-bucket/teste.txt # deletando o arquivo
 
-
-
+aws s3 rb s3://meu-bucket # deletando o bucket, certifique-se que o bucket esteja vazio
+```
+Se o bucket não estiver vazio, você receberá um erro.<br>
+Você pode usar o comando aws s3 rm em combinação com a opção --recursive para excluir todos os objetos dentro do bucket de forma recursiva:
+```
+aws s3 rm s3://<bucket_name> --recursive
+```
 
 
 
