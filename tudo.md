@@ -1,4 +1,4 @@
-# Part1 -> Local Stack Basico Do Basico
+# Part1 - LocalStack Basico Do Basico
 
 #### Comecei instalando as seguintes ferramentas: 🔧⚙️
 ```
@@ -25,15 +25,12 @@ Não estava aparecendo o hello world no navegador, então corrigimos substituind
 `.amazonaws.com/Prod/hello/` por `.localhost.localstack.cloud:4566/Prod/hello/` na url gerada pelo deploy.<br>
 agora sim esta local. ✅
 
-#### Vamos para o proximo passo, pareceu pouco esse inicio, mas foi bem trabalhoso: 😥
+#### Vamos para o proximo passo, parece pouco esse inicio, mas foi bem trabalhoso: 😥
+Achamos um [site](https://hands-on.cloud/introduction-to-boto3-library/#what-is-the-boto3-library) que ensina a fazer um CRUD em python com localstack. Vamos tentar replicar esse site, lest Bora! 🏃
 
-# Part 2 -> CRUD PYTHON
+# Part 2 - Crtl C + Crtl V do site
 
-## Passo 1
-
-### Vamos tentar criar o CRUD em python já que o basico esta funcionando
-
-Achamos um [site](https://hands-on.cloud/introduction-to-boto3-library/#what-is-the-boto3-library) que ensina a fazer um CRUD em python com localstack. então lest bora 🏃
+## Passo 1 - Configurar o ambiente
 
 #### Ele usa o boto3, então vamos instalar o boto3.
 
@@ -76,7 +73,7 @@ awsls s3 ls ✅
 ```
 Funcionou? Se não, você pode enviar uma mensagem para o meu [assistente](https://chat.openai.com/) pessoal e ele te responderá ✅
 
-## Segundo passo, vamos criar um bucket do S3 usando o boto3 e AWS CLI no LocalStack
+## passo 2, Criar um Bucket no S3 usanod AWS CLI e AWS CDK
 
 #### Vou focar apenas nas partes que considero mais importantes
 
@@ -226,8 +223,7 @@ Você pode usar o comando aws s3 rm em combinação com a opção --recursive pa
 aws s3 rm s3://<bucket_name> --recursive
 ```
 
-
-
+## passo 3 - Criando uma função lambda
 
 
 
