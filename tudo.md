@@ -130,9 +130,11 @@ Lembrando que o `BUCKET_NAME` é uma variavel que contem o nome do bucket que qu
 
 Via linha de commando
 ```
-awsls s3 mb s3://hands-on-cloud-localstack-bucket ✅
-awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket ✅
+awsls s3 mb s3://hands-on-cloud-localstack-bucket
+ou
+awsls s3api create-bucket --bucket hands-on-cloud-localstack-bucket
 ```
+A diferença deles são semelhantes as diferenças do client e resource, irei sita-los mais a baixa <br>
 
 ### Vamos lista os buckets criados
 
