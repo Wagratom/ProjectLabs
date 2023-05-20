@@ -13,28 +13,28 @@ boto3.setup_default_session(profile_name=AWS_PROFILE)
 dynamodb_resource = boto3.resource("dynamodb", region_name=AWS_REGION, endpoint_url=ENDPOINT_URL) # Boto3 DynamoDB resource
 
 def add_dynamodb_table_item(table_name, name, email):
-    try:
-        table = dynamodb_resource.Table(table_name)
-        response = table.put_item(
-            Item={
-                'Name': name,
-                'Email': email
-            }
-        )
-    except ClientError:
-        logger.exception('Could not add the item to table.')
-        raise
-    else:
-        return response
+	try:
+		table = dynamodb_resource.Table(table_name)
+		response = table.put_item(					# Estou adicionando um item na tabela
+			Item={
+				'Name': name,
+				'Email': email
+			}
+		)
+	except ClientError:
+		logger.exception('Could not add the item to table.')
+		raise
+	else:
+		return response
 
 def main():
-    table_name = 'hands-on-cloud-dynamodb-table'
-    name = 'hands-on-cloud'
-    email = 'example@cloud.com'
-    logger.info('Adding item...')
-    dynamodb = add_dynamodb_table_item(table_name, name, email)
-    logger.info(
-        f'DynamoDB table item created: {json.dumps(dynamodb, indent=4)}')
+	table_name = 'hands-on-cloud-dynamodb-table'
+	name = 'hands-on-cloud'
+	email = 'example@cloud.com'
+	logger.info('Adding item...')
+	dynamodb = add_dynamodb_table_item(table_name, name, email)
+	logger.info(
+		f'DynamoDB table item created: {json.dumps(dynamodb, indent=4)}')
 
 if __name__ == '__main__':
-    main()
+	main()
