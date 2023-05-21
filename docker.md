@@ -1,5 +1,5 @@
 
-# Docker o que e?
+# Docker o que é?
 
 Docker é uma plataforma de software que permite criar, executar e gerenciar aplicativos em contêineres. Os contêineres são uma forma de virtualização em que o aplicativo e todas as suas dependências são empacotados em um único pacote portátil, que pode ser executado em qualquer sistema operacional que suporte o Docker.
 

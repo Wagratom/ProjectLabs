@@ -1,3 +1,6 @@
+# Não terminei ainda, mas vou terminar, prometo! 🤞
+Por enquanto esta inutio
+
 # Part1 - LocalStack Basico Do Basico
 
 #### Comecei instalando as seguintes ferramentas: 🔧⚙️
